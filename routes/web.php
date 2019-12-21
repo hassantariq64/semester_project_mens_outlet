@@ -18,6 +18,9 @@ Route::get('/welcome', function () {
 
 Route::get('/','IndexController@main');
 Route::get('/login','LoginController@log');
+Route::post('/submit','LoginController@insert');
+Route::get('/user','LoginController@authenticate');
+
 Route::get('/cart','CartController@buy');
 Route::get('/shirts','ShirtsController@upperbody');
 Route::get('/dressshirts','ShirtsController@dressbody');

@@ -32,8 +32,14 @@
 								<li><a href="mailto:mensoutlet64@gmail.com">mensoutlet64@gmail.com</a></li>								
 							</ul>
 							<ul class="list">
+								@if(Auth::user())
+							<li><a href="{{url('')}}"><i class="fa fa-fw fa-user"></i>{{Auth::user()->name}}</a></li>
+								@else	
+								
 								<li><a href="{{url('login')}}"><i class="fa fa-fw fa-user"></i>login / Signup</a></li>
+								@endif
 								<li><a href="{{url('cart')}}"><i class="fa fa-fw fa-opencart"></i> cart</a></li>
+
 							</ul>
 						</div>
 					</div>					
