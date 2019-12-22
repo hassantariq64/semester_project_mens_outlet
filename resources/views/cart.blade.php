@@ -8,6 +8,8 @@
 @endsection
 @section('contact')
 @endsection
+@section('navbar')
+@endsection
 @section('brand')
 @endsection
 @parent

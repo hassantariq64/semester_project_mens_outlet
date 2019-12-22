@@ -1,6 +1,16 @@
 @extends('index')
 @section('title','login')
-@section('data')
+@section('slider')
+@endsection
+@section('products')
+@endsection
+@section('about')
+@endsection
+@section('contact')
+@endsection
+@section('navbar')
+@endsection
+@section('brand')
 @endsection
 @parent
 
@@ -26,10 +36,10 @@
 					<div class="login-form">
 						<h3 class="billing-title text-center">Login</h3>
 						<p class="text-center mt-80 mb-40">Welcome back! Sign in to your account </p>
-						<form action="#">
+						<form action="{{url('/loginuser')}}" method="POST">
 							@csrf
-							<input type="text" placeholder="Username or Email*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Username or Email*'" required class="common-input mt-20">
-							<input type="password" placeholder="Password*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password*'" required class="common-input mt-20">
+							<input type="text" name="email" placeholder="Username or Email*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Username or Email*'" required class="common-input mt-20">
+							<input type="password" name="password" placeholder="Password*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password*'" required class="common-input mt-20">
 							<button class="view-btn color-2 mt-20 w-100"><span>Login</span></button>
 							<div class="mt-20 d-flex align-items-center justify-content-between">
 								<div class="d-flex align-items-center"><input type="checkbox" class="pixel-checkbox" id="login-1"><label for="login-1">Remember me</label></div>

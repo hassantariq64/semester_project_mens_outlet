@@ -8,9 +8,9 @@
 @endsection
 @section('contact')
 @endsection
-@section('brand')
-@endsection
 @section('navbar')
+@endsection
+@section('brand')
 @endsection
 @parent
 

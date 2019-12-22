@@ -33,12 +33,18 @@
 							</ul>
 							<ul class="list">
 								@if(Auth::user())
-							<li><a href="{{url('')}}"><i class="fa fa-fw fa-user"></i>{{Auth::user()->name}}</a></li>
+								<li><a href="{{url('')}}"><i class="fa fa-fw fa-user"></i>{{Auth::user()->name}}</a></li>
+
+								<li><a href="" data-toggle="modal" data-target="#logout"><i class="fa fa-fw fa-user"></i>logout</a></li>
+								{{-- <li><button class="primary-btn text-uppercase" href="" data-toggle="modal" data-target="#logout">Logout</button> --}}
+								</li>
+								{{-- <li><button href="" data-toggle="modal" data-target="#logout"> <i  class="fa fa-fw fa-logout"></i>  Logout</button></li> --}}
+
 								@else	
 								
-								<li><a href="{{url('login')}}"><i class="fa fa-fw fa-user"></i>login / Signup</a></li>
+								<li><a href="{{url('loginuser')}}"><i class="fa fa-fw fa-user"></i>login / Signup</a></li>
 								@endif
-								<li><a href="{{url('cart')}}"><i class="fa fa-fw fa-opencart"></i> cart</a></li>
+
 
 							</ul>
 						</div>
@@ -310,7 +316,21 @@
 
 			@yield('content')
 			<!-- End brand Area -->
-
+			<!-- start Logout Model -->
+				<div class="modal" id="logout">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3>Logout</h3>
+						</div>
+						<div class="modal-body">
+							<form action="{{url('/logout')}}" method="post">
+								@csrf
+								<button type="submit" class="btn btn-danger">Logout</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			<!-- end Logout Model -->
 			<!-- start footer Area -->
 			@section('footer')		
 			<footer class="footer-area section-gap">

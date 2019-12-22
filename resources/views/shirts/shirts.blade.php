@@ -4,6 +4,12 @@
 @endsection
 @section('products')
 @endsection
+@section('about')
+@endsection
+@section('contact')
+@endsection
+@section('navbar')
+@endsection
 @section('brand')
 @endsection
 @parent

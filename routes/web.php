@@ -17,9 +17,22 @@ Route::get('/welcome', function () {
 
 
 Route::get('/','IndexController@main');
-Route::get('/login','LoginController@log');
+Route::get('/loginuser','LoginController@log');
 Route::post('/submit','LoginController@insert');
 Route::get('/user','LoginController@authenticate');
+Route::post('/logout','LoginController@switchoff');
+Route::post('/loginuser','LoginController@loginuser');
+
+
+// Route::get('/admin','AdminController@login');
+Route::get('/main','ProductsController@panel');
+
+Route::get('/products','ProductsController@index');
+Route::post('/custom-logout','LoginController@switchoff');
+Route::post('/product/store', 'ProductsController@store');
+Route::get('product/delete/{id}', 'ProductsController@delete');
+Route::get('product/edit/{id}', 'ProductsController@edit');
+Route::post('product/update/{id}', 'ProductsController@update');
 
 Route::get('/cart','CartController@buy');
 Route::get('/shirts','ShirtsController@upperbody');
@@ -62,3 +75,7 @@ Route::get('/confirmation','ConfirmationController@checked');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
